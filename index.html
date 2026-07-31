@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<title>《幸福快樂的日子》TIFF × BIFF 時程總覽</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#FAF9F5">
+<meta name="robots" content="noindex, nofollow">
+<style>
+:root{
+  --paper:#FAF9F5;
+  --card:#FFFFFF;
+  --ink:#23272B;
+  --muted:#7A8088;
+  --line:#E7E5DE;
+  --tiff:#2F6BE4;    --tiff-soft:#E9F0FE;
+  --biff:#D6122B;    --biff-soft:#FCE8EB;
+  --mkt:#E4640F;
+  --wait:#B98200;
+  --info:#2F6BE4;
+  --pr:#8A5CF5;
+  --urgent:#F02D68;
+  --sans:"PingFang TC","Hiragino Sans TC","Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;
+}
+:root{color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--sans); line-height:1.7; font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:640px; margin:0 auto; padding:0 18px 64px}
+
+/* ---------- header ---------- */
+header{padding:30px 0 20px; border-bottom:4px solid var(--ink)}
+.eyebrow{
+  display:inline-block; letter-spacing:.14em; font-size:12px; font-weight:700;
+  color:var(--biff); text-transform:uppercase; margin-bottom:10px;
+}
+h1{font-size:clamp(28px,7vw,40px); line-height:1.2; margin:0 0 4px; font-weight:800; letter-spacing:.01em; text-wrap:balance}
+.sub{color:var(--muted); font-size:14px; line-height:1.65; margin:6px 0 0}
+.fests{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:16px}
+@media (max-width:430px){ .fests{grid-template-columns:1fr} }
+.fest{border:1px solid var(--line); border-radius:12px; padding:12px 14px; border-top:4px solid var(--line)}
+.fest.tiff{border-top-color:var(--tiff); background:var(--tiff-soft)}
+.fest.biff{border-top-color:var(--biff); background:var(--biff-soft)}
+.fest .name{font-weight:800; font-size:16px}
+.fest.tiff .name{color:var(--tiff)}
+.fest.biff .name{color:var(--biff)}
+.fest .meta{font-size:13px; color:var(--muted); line-height:1.6; margin-top:2px}
+.fest .meta b{color:var(--ink)}
+.fest a{font-size:12.5px; color:inherit}
+
+/* ---------- legend ---------- */
+.legend{display:flex; flex-wrap:wrap; gap:6px 14px; margin:14px 0 0; font-size:12.5px; color:var(--muted); align-items:center}
+.legend .swatch{
+  display:inline-block; width:14px; height:14px; border-radius:4px; vertical-align:-2px; margin-right:3px;
+}
+.legend .swatch.tiff{background:var(--tiff-soft); border:1px solid var(--tiff)}
+.legend .swatch.biff{background:var(--biff-soft); border:1px solid var(--biff)}
+.chip{
+  display:inline-block; padding:1px 9px; border-radius:99px; font-size:12px; font-weight:700;
+  vertical-align:1px; white-space:nowrap;
+}
+.chip.tiff{background:var(--tiff); color:#fff}
+.chip.biff{background:var(--biff); color:#fff}
+.owner{font-size:11.5px; padding:1px 8px; background:var(--card); border:1px solid currentColor}
+.owner.marketing{color:var(--mkt)}
+.owner.pr{color:var(--pr)}
+.owner.producer{color:var(--info)}
+.owner.post{color:var(--wait)}
+.owner.all{color:var(--ink)}
+
+/* ---------- month groups ---------- */
+h2{
+  font-size:15px; letter-spacing:.12em; color:var(--muted); text-transform:uppercase;
+  margin:34px 0 10px; padding-bottom:8px; border-bottom:2px solid var(--ink); font-weight:800;
+}
+
+/* ---------- timeline ---------- */
+.tl{list-style:none; margin:0; padding:0}
+.tl li{
+  display:grid; grid-template-columns:96px 1fr; gap:4px 14px;
+  padding:11px 14px; margin:7px 0; border-radius:10px; align-items:baseline;
+}
+.tl li.tiff{background:var(--tiff-soft)}
+.tl li.biff{background:var(--biff-soft)}
+.tl .d{
+  font-size:13.5px; color:var(--muted); font-variant-numeric:tabular-nums;
+  font-weight:700; line-height:1.5;
+}
+.tl li.tiff .d{color:var(--tiff)}
+.tl li.biff .d{color:var(--biff)}
+.tl .t{font-size:15px; line-height:1.65}
+.tl .t label{cursor:pointer}
+.tl .t small{display:block; color:var(--muted); font-size:13px; line-height:1.6; margin-top:1px; font-weight:400}
+.tl .tags{display:flex; gap:4px; flex-wrap:wrap; margin-top:5px}
+.tl input[type=checkbox]{
+  width:17px; height:17px; margin:0 9px 0 0; vertical-align:-3px; cursor:pointer;
+}
+.tl li.tiff input[type=checkbox]{accent-color:var(--tiff)}
+.tl li.biff input[type=checkbox]{accent-color:var(--biff)}
+.tl li.done{opacity:.5}
+.tl li.done .d,.tl li.done .t label{text-decoration:line-through}
+.tl li.hot .t{font-weight:800}
+.tl li.hot .d{font-weight:800}
+.tl li.fest-day{border:1px solid var(--line)}
+.tl li.fest-day.tiff{border-left:5px solid var(--tiff)}
+.tl li.fest-day.biff{border-left:5px solid var(--biff)}
+@media (max-width:460px){
+  .tl li{grid-template-columns:1fr; gap:1px; padding:10px 12px}
+  .tl .d{font-size:12.5px}
+}
+
+/* ---------- today marker ---------- */
+.today-line{
+  display:flex; align-items:center; gap:10px; margin:4px -2px; padding:2px 0;
+  list-style:none; background:none !important;
+}
+.today-line::before,.today-line::after{content:""; flex:1; border-top:2px dashed var(--urgent)}
+.today-line span{
+  background:var(--urgent); color:#fff; font-size:12px; font-weight:800;
+  padding:2px 12px; border-radius:99px; white-space:nowrap;
+}
+
+footer{margin-top:44px; padding-top:14px; border-top:1px solid var(--line); font-size:12.5px; color:var(--muted); line-height:1.7}
+a{color:var(--biff)}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+<header>
+  <span class="eyebrow">幸福快樂的日子 Happily Ever After</span>
+  <h1>TIFF × BIFF<br>時程總覽</h1>
+  <p class="sub">兩個影展的工作事項合併成一條時間軸，照日期排。細節與出處在各自的參展指南裡。</p>
+  <div class="fests">
+    <div class="fest tiff">
+      <div class="name">TIFF 多倫多影展</div>
+      <div class="meta">2026.9.10 – 9.20 · 加拿大多倫多<br><b>世界首映 9/17 19:30</b>＋第二場 9/18 12:15（必出席）<br><a href="https://leeinsmart.github.io/tiff2026_GD/">→ TIFF 詳細指南</a></div>
+    </div>
+    <div class="fest biff">
+      <div class="name">BIFF 釜山影展</div>
+      <div class="meta">2026.10.6 – 10.15 · 韓國釜山<br><b>亞洲首映（推定，待確認）</b><br><a href="https://leeinsmart.github.io/BIFF26_GD/">→ BIFF 詳細指南</a></div>
+    </div>
+  </div>
+  <div class="legend">
+    <span><span class="swatch tiff"></span>藍底＝TIFF 的事</span>
+    <span><span class="swatch biff"></span>紅底＝BIFF 的事</span>
+    <span><b>粗體＝重要行程</b></span>
+    <span>打勾＝完成（只存在自己的裝置）</span>
+  </div>
+</header>
+
+<h2>7 月</h2>
+<ul class="tl">
+  <li class="tiff" data-date="2026-07-20" data-k="tiff-0720"><span class="d">7/20（一）</span><span class="t"><label><input type="checkbox" checked>入選公布；影片頁與註冊表內容確認</label><span class="tags"><span class="chip tiff">TIFF</span><span class="chip owner producer">製片</span></span></span></li>
+  <li class="tiff" data-date="2026-07-22" data-k="tiff-0722"><span class="d">7/22（三）</span><span class="t"><label><input type="checkbox" checked>場次更改請求期限（已處理）</label><span class="tags"><span class="chip tiff">TIFF</span><span class="chip owner producer">製片</span></span></span></li>
+  <li class="tiff" data-date="2026-07-24" data-k="tiff-0724"><span class="d">7/24（五）</span><span class="t"><label><input type="checkbox" checked>送出 Film Rights Survey</label><span class="tags"><span class="chip tiff">TIFF</span><span class="chip owner marketing">行銷</span></span></span></li>
+  <li class="tiff" data-date="2026-07-27" data-k="tiff-0727"><span class="d">7/27（一）</span><span class="t"><label><input type="checkbox" checked>確認版場次收到；導演機票拍板：自購後憑收據領 CAD $2,700 支票</label><span class="tags"><span class="chip tiff">TIFF</span><span class="chip owner producer">製片</span></span></span></li>
+  <li class="biff" data-date="2026-07-30" data-k="biff-0730"><span class="d">7/30（四）</span><span class="t"><label><input type="checkbox" checked>收到釜山大會資料需求信（報名表連結＋字幕素材需求）</label><span class="tags"><span class="chip biff">BIFF</span><span class="chip owner producer">製片</span></span></span></li>
+  <li class="biff" data-date="2026-07-31" data-k="biff-0731"><span class="d">7/31（五）</span><span class="t"><label><input type="checkbox" checked>回信釜山：素材以 8/11 為目標，為定剪影片檔爭取延期</label><span class="tags"><span class="chip biff">BIFF</span><span class="chip owner producer">製片</span></span></span></li>
+  <li class="tiff hot" data-date="2026-07-31" data-k="tiff-0731"><span class="d">7/31（五）</span><span class="t"><label><input type="checkbox">回齊多倫多窗口：出席名單、抵離日期、Guest Pass 登記表、口譯需求；並回覆證件確認信</label><small>額外確定出席的演員要立即通知（9/9 大會新聞稿列名）</small><span class="tags"><span class="chip tiff">TIFF</span><span class="chip owner producer">製片</span></span></span></li>
+</ul>
+
+<h2>8 月</h2>
+<ul class="tl">
+  <li class="tiff hot" data-date="2026-08-03" data-k="tiff-0803-lock"><span class="d">8/3（一）</span><span class="t"><label><input type="checkbox">TIFF 場次完全鎖定——在此之前不要確認任何機票</label><span class="tags"><span class="chip tiff">TIFF</span><span class="chip owner producer">製片</span></span></span></li>
+  <li class="tiff hot" data-date="2026-08-03" data-k="tiff-0803-pr"><span class="d">8/3（一）20:00</span><span class="t"><label><input type="checkbox">公關聯絡人確認表截止（多倫多 20:00＝台灣 8/4 早上 8:00）；試看片授權表一起處理</label><span class="tags"><span class="chip tiff">TIFF</span><span class="chip owner pr">公關</span></span></span></li>
+  <li class="biff hot" data-date="2026-08-03" data-k="biff-0803"><span class="d">8/3（一）</span><span class="t"><label><input type="checkbox">釜山原請的交件日——大會若還沒回覆新期限，這天要跟催</label><span class="tags"><span class="chip biff">BIFF</span><span class="chip owner producer">製片</span></span></span></li>
+  <li class="tiff" data-date="2026-08-04" data-k="tiff-early-tech"><span class="d">儘早</span><span class="t"><label><input type="checkbox">決定首映場要不要付費試映／技術檢查（Royal Alexandra 不收臨時檢查）</label><span class="tags"><span class="chip tiff">TIFF</span><span class="chip owner producer">製片</span></span></span></li>
+  <li class="tiff" data-date="2026-08-06" data-k="tiff-0806"><span class="d">8/6（四）</span><span class="t"><label><input type="checkbox">決定並預訂 Market 場館廣告</label><span class="tags"><span class="chip tiff">TIFF</span><span class="chip owner marketing">行銷</span></span></span></li>
+  <li class="tiff" data-date="2026-08-08" data-k="tiff-0808"><span class="d">8/8（六）前</span><span class="t"><label><input type="checkbox">收到 DKDM 憑證資訊並交給 DCP 負責人</label><span class="tags"><span class="chip tiff">TIFF</span><span class="chip owner producer">製片</span></span></span></li>
+  <li class="biff hot" data-date="2026-08-11" data-k="biff-0811-form"><span class="d">8/11（二）</span><span class="t"><label><input type="checkbox">釜山線上報名表五步驟填完送出（林翰主填）</label><span class="tags"><span class="chip biff">BIFF</span><span class="chip owner producer">製片</span></span></span></li>
+  <li class="biff hot" data-date="2026-08-11" data-k="biff-0811-pub"><span class="d">8/11（二）</span><span class="t"><label><input type="checkbox">釜山宣傳素材交齊：英文大綱、導演簡歷、作品年表、導演照、劇照 3–5 張、宣傳片段（選）</label><span class="tags"><span class="chip biff">BIFF</span><span class="chip owner marketing">行銷</span></span></span></li>
+  <li class="biff hot" data-date="2026-08-11" data-k="biff-0811-sub"><span class="d">8/11（二）</span><span class="t"><label><input type="checkbox">釜山字幕素材：燒英字定剪影片檔＋中英對白本（延期申請中，未准前照此期限）</label><span class="tags"><span class="chip biff">BIFF</span><span class="chip owner post">後期</span></span></span></li>
+  <li class="tiff" data-date="2026-08-11" data-k="tiff-0811"><span class="d">8/11（二）</span><span class="t"><label><input type="checkbox">TIFF 排片公告——公告前不得對外公布場次；同日檢查影片頁公關聯絡資訊</label><span class="tags"><span class="chip tiff">TIFF</span><span class="chip owner marketing">行銷</span><span class="chip owner pr">公關</span></span></span></li>
+  <li class="tiff" data-date="2026-08-13" data-k="tiff-0813"><span class="d">8/13（四）</span><span class="t"><label><input type="checkbox">收到首兩場可購票配額通知並依指示回覆</label><span class="tags"><span class="chip tiff">TIFF</span><span class="chip owner producer">製片</span></span></span></li>
+  <li class="tiff" data-date="2026-08-14" data-k="tiff-0814"><span class="d">8/14（五）</span><span class="t"><label><input type="checkbox">決定並預訂 Market 加場</label><span class="tags"><span class="chip tiff">TIFF</span><span class="chip owner marketing">行銷</span></span></span></li>
+  <li class="tiff" data-date="2026-08-15" data-k="tiff-0815"><span class="d">8 月中</span><span class="t"><label><input type="checkbox">紅毯細節出爐（後台、隨行、保安一併確認）；Publicist Pass 依通知登記</label><span class="tags"><span class="chip tiff">TIFF</span><span class="chip owner producer">製片</span><span class="chip owner pr">公關</span></span></span></li>
+  <li class="tiff" data-date="2026-08-17" data-k="tiff-0817"><span class="d">8/17（一）</span><span class="t"><label><input type="checkbox">登記製片與銷售代理各一張免費證件</label><span class="tags"><span class="chip tiff">TIFF</span><span class="chip owner producer">製片</span></span></span></li>
+  <li class="tiff" data-date="2026-08-21" data-k="tiff-0821"><span class="d">8/21（五）</span><span class="t"><label><input type="checkbox">完成 DCP QC 並上傳最終版（逾期或缺 DKDM 要罰款）</label><span class="tags"><span class="chip tiff">TIFF</span><span class="chip owner post">後期</span><span class="chip owner producer">製片</span></span></span></li>
+</ul>
+
+<h2>9 月</h2>
+<ul class="tl">
+  <li class="biff" data-date="2026-09-01" data-k="biff-0901"><span class="d">9 月初</span><span class="t"><label><input type="checkbox">釜山大會記者會公布全片單——公布前不得對外透露入選；公布後台灣宣傳啟動</label><span class="tags"><span class="chip biff">BIFF</span><span class="chip owner marketing">行銷</span></span></span></li>
+  <li class="biff" data-date="2026-09-04" data-k="biff-0904"><span class="d">9/4（五）</span><span class="t"><label><input type="checkbox">釜山放映拷貝（燒英字）交付；放映格式先詢問大會</label><span class="tags"><span class="chip biff">BIFF</span><span class="chip owner post">後期</span></span></span></li>
+  <li class="tiff" data-date="2026-09-08" data-k="tiff-0908"><span class="d">9/8（二）</span><span class="t"><label><input type="checkbox">確認團隊票券與座位；需要時辦理換票</label><span class="tags"><span class="chip tiff">TIFF</span><span class="chip owner producer">製片</span></span></span></li>
+  <li class="tiff" data-date="2026-09-09" data-k="tiff-0909"><span class="d">9/9（三）</span><span class="t"><label><input type="checkbox">TIFF 大會新聞稿公布確認出席的導演與演員名單</label><span class="tags"><span class="chip tiff">TIFF</span><span class="chip owner marketing">行銷</span></span></span></li>
+  <li class="tiff" data-date="2026-09-10" data-k="tiff-transfer"><span class="d">抵達前 5 日</span><span class="t"><label><input type="checkbox">預訂受邀者的多倫多機場接送</label><span class="tags"><span class="chip tiff">TIFF</span><span class="chip owner producer">製片</span></span></span></li>
+  <li class="tiff hot fest-day" data-date="2026-09-10" data-k="tiff-fest"><span class="d">9/10 – 9/20</span><span class="t"><label><input type="checkbox">多倫多影展：9/17（四）19:30 世界首映 Royal Alexandra、9/18（五）12:15 第二場 Scotiabank 3——兩場必出席</label><small>住宿至少涵蓋 9/17、9/18 兩晚</small><span class="tags"><span class="chip tiff">TIFF</span><span class="chip owner all">全員</span></span></span></li>
+</ul>
+
+<h2>10 月</h2>
+<ul class="tl">
+  <li class="biff hot fest-day" data-date="2026-10-06" data-k="biff-fest"><span class="d">10/6 – 10/15</span><span class="t"><label><input type="checkbox">釜山影展：放映場次未公布；來賓與演員行程等大會開啟後續討論</label><span class="tags"><span class="chip biff">BIFF</span><span class="chip owner all">全員</span></span></span></li>
+</ul>
+
+<footer>
+  彙整自〈TIFF 2026 參展指南〉與〈BIFF 2026 參展指南〉的關鍵時程（截至 2026/7/31）。此頁只做總覽：每項的細節、出處與最新狀態，以<a href="https://leeinsmart.github.io/tiff2026_GD/">TIFF 指南</a>與<a href="https://leeinsmart.github.io/BIFF26_GD/">BIFF 指南</a>為準。TIFF 期限多為多倫多時間（慢台灣 12 小時）、BIFF 為韓國時間（快台灣 1 小時）。勾選進度只存在自己的裝置，不會同步給其他人。
+</footer>
+
+</div>
+
+<script>
+/* ---------- 勾選進度：存在自己的裝置（localStorage） ---------- */
+(function(){
+  var KEY='hea-timeline-2026';
+  var saved={};
+  try{ saved=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){}
+  document.querySelectorAll('.tl li[data-k]').forEach(function(li){
+    var k=li.dataset.k, box=li.querySelector('input[type=checkbox]');
+    if(!box) return;
+    if(k in saved){ box.checked=!!saved[k]; }   /* 存過的以存檔為準；沒存過的用頁面預設（已完成項預先打勾） */
+    li.classList.toggle('done', box.checked);
+    box.addEventListener('change',function(){
+      li.classList.toggle('done', box.checked);
+      saved[k]=box.checked;
+      try{ localStorage.setItem(KEY, JSON.stringify(saved)); }catch(e){}
+    });
+  });
+})();
+
+/* ---------- 依今天日期插入「今天」標記線 ---------- */
+(function(){
+  var now=new Date();
+  var y=now.getFullYear(), m=String(now.getMonth()+1).padStart(2,'0'), d=String(now.getDate()).padStart(2,'0');
+  var today=y+'-'+m+'-'+d;
+  if(today<'2026-07-20' || today>'2026-10-15') return;
+  var items=Array.prototype.slice.call(document.querySelectorAll('.tl li[data-date]'));
+  var target=null;
+  for(var i=0;i<items.length;i++){
+    if(items[i].dataset.date>=today){ target=items[i]; break; }
+  }
+  var marker=document.createElement('li');
+  marker.className='today-line';
+  marker.innerHTML='<span>今天 '+(now.getMonth()+1)+'/'+now.getDate()+'</span>';
+  if(target){ target.parentNode.insertBefore(marker,target); }
+  else{ items[items.length-1].parentNode.appendChild(marker); }
+})();
+</script>
+
+</body>
+</html>
